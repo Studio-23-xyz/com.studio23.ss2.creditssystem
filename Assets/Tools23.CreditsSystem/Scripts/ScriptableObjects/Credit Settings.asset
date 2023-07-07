@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db4fb1179a9cc34d92c311b83214cb9, type: 3}
+  m_Name: Credit Settings
+  m_EditorClassIdentifier: 
+  HeaderSize: 64
+  RoleTextSize: 48
+  RoleMembersTextSize: 36
+  ImageTextPrefab: {fileID: 4271570737128912417, guid: b96ff10f5bada1843b304947ce46b75c, type: 3}
+  ImageHeaderPrefab: {fileID: 873644331522246812, guid: a75660f3ab68e92479a181a3f6876b6a, type: 3}
+  TextHeaderPrefab: {fileID: 6799918311265913332, guid: fa1dfea5d839d844f995109dbbfb5bf4, type: 3}
+  SectionPrefabHorizontal: {fileID: 5920350487035486389, guid: 53da2167b7374964bb6df7fc4c05df8a, type: 3}
+  SectionPrefabVertical: {fileID: 8575100645800421420, guid: 1f33a68b69cf0c64b8ba31d71b84e2e6, type: 3}
