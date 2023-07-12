@@ -16,7 +16,7 @@ MonoBehaviour:
     HeaderImage: {fileID: 21300000, guid: 830ccbfc58332b14c8eeee731ce77fe0, type: 3}
     MainHeaderText: Main Header
     SubHeaderText: Sub Header
-    OptionalHeaderText: Optional Text
+    OptionalHeaderText: Optional Header
   SectionInformation:
   - SectionName: Devs
     Sections:

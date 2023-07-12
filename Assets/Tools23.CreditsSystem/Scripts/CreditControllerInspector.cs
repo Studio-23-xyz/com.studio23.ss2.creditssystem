@@ -1,7 +1,8 @@
+using Tools23.CreditSystem.Core;
 using UnityEditor;
 using UnityEngine;
 
-namespace Tools23.CreditSystem.Core
+namespace Tools23.CreditSystem.EditorCore
 {
 	//[CustomEditor(typeof(CreditController))]
 	public class CreditControllerInspector : Editor
