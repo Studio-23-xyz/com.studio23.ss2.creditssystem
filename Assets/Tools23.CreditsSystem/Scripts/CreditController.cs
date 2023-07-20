@@ -1,9 +1,11 @@
+using DG.Tweening;
 using NaughtyAttributes;
 using TMPro;
 using Tools23.CreditSystem.Data;
 using Tools23.CreditSystem.Data.ScriptableObjects;
 using Tools23.CreditSystem.Settings;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Tools23.CreditSystem.Core
@@ -13,6 +15,7 @@ namespace Tools23.CreditSystem.Core
 	{
 		public bool ScrollOnStart;
 		public float ScrollSpeed;
+		public float ScrollTime;
 
 		[Header("Header Style")]
 		[OnValueChanged("GenerateSections")]
@@ -27,12 +30,26 @@ namespace Tools23.CreditSystem.Core
 		private ScrollRect _targetScrollRect;
 		private Transform _headerTransform;
 
+		public UnityEvent OnCreditRollCompleted;
+
 		private void Start()
 		{
 			_targetScrollRect = ContentParent.parent.parent.GetComponent<ScrollRect>();
 			SettingsData.OnHeaderSettingsChanged += new CreditControllerSettings.DataChangeEvent(UpdateHeaderSettings);
 			SettingsData.OnRoleNameSettingsChanged += new CreditControllerSettings.DataChangeEvent(UpdateRoleNames);
 			SettingsData.OnRoleMemberSettingsChanged += new CreditControllerSettings.DataChangeEvent(UpdateRoleMembers);
+
+			if (ScrollOnStart)
+				StartScrollingDebug();
+		}
+
+		[ContextMenu("Start Scrolling")]
+		public void StartScrollingDebug()
+		{
+			_targetScrollRect.DOVerticalNormalizedPos(0f, ScrollTime).SetEase(Ease.Linear).OnComplete(() =>
+			{
+				OnCreditRollCompleted?.Invoke();
+			});
 		}
 
 		#region Settings Update
@@ -56,7 +73,7 @@ namespace Tools23.CreditSystem.Core
 
 		private void SetFontSettings(TextSettings textSettings, int childIndex)
 		{
-			for (int i = 2; i < ContentParent.childCount - 1; i++)
+			for (int i = 1; i < ContentParent.childCount; i++)
 			{
 				Debug.Log($"Currently iterating on {ContentParent.GetChild(i).name}");
 				TextMeshProUGUI textAsset = ContentParent.GetChild(i).GetChild(childIndex).GetComponent<TextMeshProUGUI>();
@@ -74,14 +91,6 @@ namespace Tools23.CreditSystem.Core
 		}
 
 		#endregion
-
-		private void Update()
-		{
-			if (ScrollOnStart)
-			{
-				ContentParent.GetComponent<RectTransform>().anchoredPosition += new Vector2(0f, ScrollSpeed * Time.deltaTime);
-			}
-		}
 
 		[ContextMenu("Generate SectionInformation")]
 		public void GenerateSections()
@@ -140,7 +149,7 @@ namespace Tools23.CreditSystem.Core
 				}
 			}
 			UpdateFontSettings();
-			SetupSpacerObjects();
+			
 		}
 
 		[Button("Horizontal Layout")]
@@ -161,7 +170,7 @@ namespace Tools23.CreditSystem.Core
 				}
 			}
 			UpdateFontSettings();
-			SetupSpacerObjects();
+			
 		}
 
 		private void SetupSpacerObjects()

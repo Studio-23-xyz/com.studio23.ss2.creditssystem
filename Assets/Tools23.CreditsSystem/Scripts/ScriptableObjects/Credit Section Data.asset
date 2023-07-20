@@ -14,39 +14,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HeaderInformation:
     HeaderImage: {fileID: 21300000, guid: 830ccbfc58332b14c8eeee731ce77fe0, type: 3}
-    MainHeaderText: Main Header
-    SubHeaderText: Sub Header
-    OptionalHeaderText: Optional Header
+    MainHeaderText: Silent Scream
+    SubHeaderText: Studio 23
+    OptionalHeaderText: 
   SectionInformation:
-  - SectionName: Devs
+  - SectionName: Game Director
     Sections:
-    - Dodo
-    - Parasaur
-    - Triceratops
-  - SectionName: Carnivores
+    - Mushfiq Iqbal
+  - SectionName: Level Designer
     Sections:
-    - Carno
-    - Spino
-    - Allo
-  - SectionName: Flyers
+    - Mushfiq Iqbal
+  - SectionName: Script Writer
     Sections:
-    - Pteranodon
-    - Wyvern
-    - Argentavis
-    - Griffin
-    - Tapejara
-    - Vulture
-  - SectionName: Water Mounts
+    - Mushfiq Iqbal
+  - SectionName: Game Developers
     Sections:
-    - Icthyosaurus
-    - Megalodon
-    - Tusoteuthis
-    - Mossasaur
-    - Cnidaria
-    - Angler Fish
-  - SectionName: Exotic
+    - Dipok Sarkar
+    - Tanimul Haque Khan
+    - Maruf Howladar Opu
+    - Ezazul Haque
+  - SectionName: Artist
     Sections:
-    - Shadowmane
-    - Astrodelphis
-    - Void Wyrm
-    - Ovis
+    - Mahmoda Ferdous
+    - Shushanto Kumar
+    - Sanim Ahmed Niloy
+  - SectionName: QA
+    Sections:
+    - Sazid Ahmed Nassir
+  - SectionName: Audio
+    Sections:
+    - Md. Rasheeq Ishraq Kamal
+    - ThyWinter
+  - SectionName: Coordinator
+    Sections:
+    - Ziad Mohib
+  - SectionName: Special Thanks
+    Sections:
+    - Raisul Kabir
