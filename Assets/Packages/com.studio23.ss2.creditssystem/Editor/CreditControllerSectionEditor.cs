@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Studio23.SS2.CreditsSystem.Data;
 using UnityEditor;
+using UnityEditorInternal;
 using UnityEngine;
 
 
@@ -11,20 +12,15 @@ namespace Studio23.SS2.CreditsSystem.Editor
     {
         private CreditSectionContentScriptableObject sectionContent;
         private HeaderData headerData;
+        private SectionData _sectionData;
         private List<SectionData> sectionDataList = new List<SectionData>();
-
-        private SerializedObject serializedObject;
-        SerializedProperty sectionNameProperty;
-        SerializedProperty sectionsProperty;
 
         void OnEnable()
         {
-            serializedObject = new SerializedObject(this);
-            sectionNameProperty = serializedObject.FindProperty("SectionName");
-            sectionsProperty = serializedObject.FindProperty("Sections");
+            headerData = new HeaderData();
+            _sectionData = new SectionData();
+            sectionDataList = new List<SectionData>();
         }
-
-
 
         [MenuItem("Studio-23/Credit System/Create Credit Section")]
         public static void ShowWindow()
@@ -34,66 +30,68 @@ namespace Studio23.SS2.CreditsSystem.Editor
 
         private void OnGUI()
         {
+           
             GUILayout.Label("Credit Section Creation", EditorStyles.boldLabel);
-            HeaderData headerData = new HeaderData();
-            SectionData sectionData = new SectionData();
-
             GUILayout.Label("Header Data", EditorStyles.boldLabel);
             headerData.HeaderImage = (Sprite)EditorGUILayout.ObjectField("Header Image", headerData.HeaderImage, typeof(Sprite), false);
             headerData.MainHeaderText = EditorGUILayout.TextField("Main Header Text", headerData.MainHeaderText);
             headerData.SubHeaderText = EditorGUILayout.TextField("Sub Header Text", headerData.SubHeaderText);
             headerData.OptionalHeaderText = EditorGUILayout.TextField("Optional Header Text", headerData.OptionalHeaderText);
-
-            GUILayout.Label("Section Data", EditorStyles.boldLabel);
-            sectionData.SectionName = EditorGUILayout.TextField("Section Name", headerData.MainHeaderText);
-
-            GUILayout.Label("Sections", EditorStyles.boldLabel);
-
-            if (sectionData.Sections == null)
+            GUILayout.Label("Section Information", EditorStyles.boldLabel);
+            GUILayout.BeginHorizontal();
+            GUILayout.FlexibleSpace(); // Push the button to the right
+           
+            if (GUILayout.Button("Create Category", GUILayout.Width(150))) AddSectionData();
+            GUILayout.EndHorizontal();
+            for (var i = 0; i < sectionDataList.Count; i++)
             {
-                sectionData.Sections = new List<string>();
+                GUILayout.Label(sectionDataList[i].SectionName, EditorStyles.boldLabel);
+                sectionDataList[i].SectionName = EditorGUILayout.TextField("Section Name", sectionDataList[i].SectionName);
+                CreateCategoryData(sectionDataList[i]);
             }
-
-            SerializedProperty sectionsProperty = serializedObject.FindProperty("Sections");
-            EditorGUI.BeginChangeCheck();
-            EditorGUILayout.PropertyField(sectionsProperty, true);
-            if (EditorGUI.EndChangeCheck())
-            {
-                serializedObject.ApplyModifiedProperties();
-            }
-
+            if (GUILayout.Button("Create Credit Settings")) CreateAndSaveScriptableObject();
         }
 
-        private CreditSectionContentScriptableObject CreateCreditSectionContent()
+        private void CreateCategoryData(SectionData sectionData)
         {
-            var newSection = CreateInstance<CreditSectionContentScriptableObject>();
-            var path = AssetDatabase.GenerateUniqueAssetPath(
-                "Assets/YourFolderPath/YourSectionAssetName.asset"); // Set the desired folder and asset name
-            AssetDatabase.CreateAsset(newSection, path);
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
-
-            EditorUtility.FocusProjectWindow();
-            Selection.activeObject = newSection;
-
-            return newSection;
-        }
-
-        private void SetHeaderData()
-        {
-            if (headerData != null)
+            for (var i = 0; i < sectionData.Sections.Count; i++)
             {
-                sectionContent.HeaderInformation = headerData;
-                EditorUtility.SetDirty(sectionContent);
-                AssetDatabase.SaveAssets();
-                AssetDatabase.Refresh();
+                EditorGUILayout.BeginHorizontal();
+                //GUILayout.Space(20); // Add left padding
+                sectionData.Sections[i] = EditorGUILayout.TextField($"Sections {i + 1}:", sectionData.Sections[i]);
+                if (GUILayout.Button("Remove", GUILayout.Width(80)) && sectionData.Sections.Count > 0) sectionData.Sections.RemoveAt(i);
+                EditorGUILayout.EndHorizontal();
             }
+
+            if (GUILayout.Button("Add Section", GUILayout.Width(150))) sectionData.Sections.Add("");
         }
 
         private void AddSectionData()
         {
-            var newSectionData = new SectionData();
-            sectionDataList.Add(newSectionData);
+          
+            var newSection = new SectionData();
+            sectionDataList.Add(newSection);
         }
+
+        private void CreateAndSaveScriptableObject()
+        {
+            // Create a new instance of CreditSectionContentScriptableObject
+            sectionContent = CreateInstance<CreditSectionContentScriptableObject>();
+
+            // Assign the collected data to the ScriptableObject
+            sectionContent.HeaderInformation = headerData;
+            sectionContent.SectionInformation = sectionDataList;
+
+            // Specify the path to save the ScriptableObject
+            var path = "Assets/Packages/com.studio23.ss2.creditssystem/Samples/creditSection.asset"; // Set your desired folder and asset name
+
+            // Create the asset and save it
+            AssetDatabase.CreateAsset(sectionContent, path);
+            EditorUtility.SetDirty(sectionContent);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+        }
+
+
     }
 }

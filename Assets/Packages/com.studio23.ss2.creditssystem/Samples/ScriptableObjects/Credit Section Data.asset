@@ -19,8 +19,7 @@ MonoBehaviour:
     OptionalHeaderText: 
   SectionInformation:
   - SectionName: Game Director
-    Sections:
-    - Mushfiq Iqbal
+    Sections: []
   - SectionName: Level Designer
     Sections:
     - Mushfiq Iqbal
