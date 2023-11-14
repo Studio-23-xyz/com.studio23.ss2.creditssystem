@@ -9,19 +9,35 @@ namespace Studio23.SS2.CreditsSystem.Editor
 	{
 		public override void OnInspectorGUI()
 		{
-			EditorGUILayout.LabelField("Custom Editor Here");
-			DrawDefaultInspector();
-			CreditController controller = (CreditController)target;
-			EditorGUILayout.Space(5);
-			if (GUILayout.Button("Horizontal Layout"))
-			{
-				controller.GenerateHorizontalSections();
-			}
-			EditorGUILayout.Space(5);
-			if (GUILayout.Button("Vertical Layout"))
-			{
-				controller.GenerateVerticalSections();
-			}
-		}
+            EditorGUILayout.LabelField("Custom Editor Here");
+            DrawDefaultInspector();
+            CreditController controller = (CreditController)target;
+
+            EditorGUILayout.Space(5);
+
+            GUILayout.BeginHorizontal(); // Begin horizontal layout
+
+            if (GUILayout.Button("Horizontal Layout"))
+            {
+                controller.GenerateHorizontalSections();
+            }
+
+            if (GUILayout.Button("Vertical Layout"))
+            {
+                controller.GenerateVerticalSections();
+            }
+
+            GUILayout.EndHorizontal(); // End horizontal layout
+
+            EditorGUILayout.Space(5);
+
+            // New button for generating credits data
+            if (GUILayout.Button("Generate Credits Data"))
+            {
+                controller.GenerateSections();
+            }
+
+            EditorGUILayout.Space(5);
+        }
 	}
 }

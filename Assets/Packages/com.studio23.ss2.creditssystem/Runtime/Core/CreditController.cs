@@ -80,6 +80,9 @@ namespace Studio23.SS2.CreditsSystem.Core
 
         #endregion
 
+        /// <summary>
+        /// Generate section information from the section data
+        /// </summary>
         [ContextMenu("Generate SectionInformation")]
         public void GenerateSections()
         {
@@ -118,7 +121,9 @@ namespace Studio23.SS2.CreditsSystem.Core
                 headerText.text = tempString;
             }
         }
-
+        /// <summary>
+        /// Set credit rolls onto vertical layout
+        /// </summary>
         public void GenerateVerticalSections()
         {
             ClearSections();
@@ -135,7 +140,9 @@ namespace Studio23.SS2.CreditsSystem.Core
 
             UpdateFontSettings();
         }
-
+        /// <summary>
+        /// Set Credits Roll onto Horizontal Layout
+        /// </summary>
         public void GenerateHorizontalSections()
         {
             ClearSections();
