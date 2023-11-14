@@ -30,15 +30,15 @@ https://github.com/Studio-23-xyz/com.studio23.ss2.creditssystem.git#upm
 
 This package come with a default scriptable objects which requires to setup necessary credit sections. But If you want to customize and create a new credit sections, just go to Studio 23-> Credit System -> Create Credit Section. Then
 fill up the necessary information you required. There is section information where you can create new category and names related to the category.
-[image 1]
+![Category-Section](Screenshots/creditSection-1.png)
 Final output can be looked like This
-[image 2]
+![Category-Section](Screenshots/creditSection-2.png)
 Create Credit Settings will create new scriptable object, which you can assign onto credit controller system. 
 
 ### Setting up Credit Settings
 
 You can change your own font asset and style in credit settings. To change just go to Studio 23 -> Credit System -> Create Credit Settings.
-[image 1]
+![CreditSettings](Screenshots/CreditSettings.png)
 
 
 ### Usage of Credits Controller
