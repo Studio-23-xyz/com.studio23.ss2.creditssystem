@@ -5,18 +5,18 @@ using UnityEngine;
 
 	public class TextController : MonoBehaviour
 	{
-		public TextMeshProUGUI TextAsset;
+		private TextMeshProUGUI _textAsset;
 
 		private void Awake()
 		{
-			TextAsset = GetComponent<TextMeshProUGUI>();
+			_textAsset = GetComponent<TextMeshProUGUI>();
 		}
 
 		public void UpdateText(TextSettings settings)
 		{
-			TextAsset.font = settings.FontAsset;
-			TextAsset.fontStyle = settings.FontStyle;
+			_textAsset.font = settings.FontAsset;
+			_textAsset.fontStyle = settings.FontStyle;
 
-			TextAsset.UpdateFontAsset();
+			_textAsset.UpdateFontAsset();
 		}
 	}

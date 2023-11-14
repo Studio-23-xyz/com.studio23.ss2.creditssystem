@@ -11,7 +11,6 @@ namespace Studio23.SS2.CreditsSystem.Editor
     {
         public override void OnInspectorGUI()
         {
-          //  HeaderData headerData = (HeaderData)target;
            HeaderData headerData = new HeaderData();
 
             headerData.HeaderImage = (Sprite)EditorGUILayout.ObjectField("Header Image", headerData.HeaderImage, typeof(Sprite), false);

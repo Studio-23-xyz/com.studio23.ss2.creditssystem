@@ -10,11 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7dc3ff6c3274b32469a253fbccffcb8d, type: 3}
-  m_Name: Credit Section
+  m_Name: creditSection
   m_EditorClassIdentifier: 
   HeaderInformation:
-    HeaderImage: {fileID: 0}
-    MainHeaderText: 
-    SubHeaderText: 
+    HeaderImage: {fileID: 21300000, guid: 830ccbfc58332b14c8eeee731ce77fe0, type: 3}
+    MainHeaderText: saDaSD
+    SubHeaderText: saDAS
     OptionalHeaderText: 
-  SectionInformation: []
+  SectionInformation:
+  - SectionName: Game director
+    Sections:
+    - ere
+    - ere
+    - bguhbu
+  - SectionName: wqeqwe
+    Sections:
+    - qweqw
+    - qweq

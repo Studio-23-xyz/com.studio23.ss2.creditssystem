@@ -21,8 +21,14 @@
     "com.cysharp.unitask": "2.5.0"
   },
   "keywords": [
-    "Credits"
+    "Credits",
+    "Utility",
+    "Tool"
   ],
+"repository": {
+    "type": "git",
+    "url": "https://github.com/Studio-23-xyz/{package_name}.git"    
+  },
   "author": {
     "name": "Studio 23",
     "email": "contact@studio-23.xyz",

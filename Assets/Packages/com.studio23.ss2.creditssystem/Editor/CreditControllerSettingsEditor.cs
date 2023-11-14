@@ -11,15 +11,15 @@ namespace Studio23.SS2.CreditsSystem.Editor
     [CustomEditor(typeof(CreditControllerSettings))]
     public class CreditControllerSettingsEditor : EditorWindow
     {
-        private GameObject imageTextPrefab;
-        private GameObject imageHeaderPrefab;
-        private GameObject textHeaderPrefab;
-        private GameObject sectionPrefabHorizontal;
-        private GameObject sectionPrefabVertical;
-        private TextSettings headerFontSettings;
-        private TextSettings roleHeaderFontSettings;
-        private TextSettings roleMembersFontSettings;
-        private GameObject spacerObject;
+        private GameObject _imageTextPrefab;
+        private GameObject _imageHeaderPrefab;
+        private GameObject _textHeaderPrefab;
+        private GameObject _sectionPrefabHorizontal;
+        private GameObject _sectionPrefabVertical;
+        private TextSettings _headerFontSettings;
+        private TextSettings _roleHeaderFontSettings;
+        private TextSettings _roleMembersFontSettings;
+        private GameObject _spacerObject;
 
         private Texture _titleImage;
 
@@ -31,8 +31,6 @@ namespace Studio23.SS2.CreditsSystem.Editor
 
         private void OnGUI()
         {
-
-
             if (_titleImage == null)
                 // Load the title image from the Resources folder
                 _titleImage = Resources.Load<Texture>("Images/creditSettings");
@@ -47,22 +45,30 @@ namespace Studio23.SS2.CreditsSystem.Editor
 
             GUILayout.Label("Credit Settings Data Creation", EditorStyles.boldLabel);
 
-            imageTextPrefab = (GameObject)EditorGUILayout.ObjectField("Image Text Prefab", imageTextPrefab, typeof(GameObject), false);
-            imageHeaderPrefab = (GameObject)EditorGUILayout.ObjectField("Image Header Prefab", imageHeaderPrefab, typeof(GameObject), false);
-            textHeaderPrefab = (GameObject)EditorGUILayout.ObjectField("Text Header Prefab", textHeaderPrefab, typeof(GameObject), false);
-            sectionPrefabHorizontal = (GameObject)EditorGUILayout.ObjectField("Section Prefab (Horizontal)", sectionPrefabHorizontal, typeof(GameObject), false);
-            sectionPrefabVertical = (GameObject)EditorGUILayout.ObjectField("Section Prefab (Vertical)", sectionPrefabVertical, typeof(GameObject), false);
+            _imageTextPrefab =
+                (GameObject)EditorGUILayout.ObjectField("Image Text Prefab", _imageTextPrefab, typeof(GameObject),
+                    false);
+            _imageHeaderPrefab = (GameObject)EditorGUILayout.ObjectField("Image Header Prefab", _imageHeaderPrefab,
+                typeof(GameObject), false);
+            _textHeaderPrefab =
+                (GameObject)EditorGUILayout.ObjectField("Text Header Prefab", _textHeaderPrefab, typeof(GameObject),
+                    false);
+            _sectionPrefabHorizontal = (GameObject)EditorGUILayout.ObjectField("Section Prefab (Horizontal)",
+                _sectionPrefabHorizontal, typeof(GameObject), false);
+            _sectionPrefabVertical = (GameObject)EditorGUILayout.ObjectField("Section Prefab (Vertical)",
+                _sectionPrefabVertical, typeof(GameObject), false);
 
             GUILayout.Label("Header Font Settings", EditorStyles.boldLabel);
-            headerFontSettings = DrawTextSettingsFields(headerFontSettings);
+            _headerFontSettings = DrawTextSettingsFields(_headerFontSettings);
 
             GUILayout.Label("Role Header Font Settings", EditorStyles.boldLabel);
-            roleHeaderFontSettings = DrawTextSettingsFields(roleHeaderFontSettings);
+            _roleHeaderFontSettings = DrawTextSettingsFields(_roleHeaderFontSettings);
 
             GUILayout.Label("Role Members Font Settings", EditorStyles.boldLabel);
-            roleMembersFontSettings = DrawTextSettingsFields(roleMembersFontSettings);
+            _roleMembersFontSettings = DrawTextSettingsFields(_roleMembersFontSettings);
 
-            spacerObject = (GameObject)EditorGUILayout.ObjectField("Spacer Object", spacerObject, typeof(GameObject), false);
+            _spacerObject =
+                (GameObject)EditorGUILayout.ObjectField("Spacer Object", _spacerObject, typeof(GameObject), false);
 
             if (GUILayout.Button("Create Credit Settings")) CreateCreditControllerSettingsDataAsset();
         }
@@ -72,7 +78,8 @@ namespace Studio23.SS2.CreditsSystem.Editor
             if (textSettings == null)
                 textSettings = new TextSettings();
 
-            textSettings.FontAsset = (TMP_FontAsset)EditorGUILayout.ObjectField("Font Asset", textSettings.FontAsset, typeof(TMP_FontAsset), false);
+            textSettings.FontAsset = (TMP_FontAsset)EditorGUILayout.ObjectField("Font Asset", textSettings.FontAsset,
+                typeof(TMP_FontAsset), false);
             textSettings.FontStyle = (FontStyles)EditorGUILayout.EnumPopup("Font Style", textSettings.FontStyle);
 
             return textSettings;
@@ -81,10 +88,10 @@ namespace Studio23.SS2.CreditsSystem.Editor
         private void CreateCreditControllerSettingsDataAsset()
         {
             // Check if any required fields are null
-            if (imageTextPrefab == null || imageHeaderPrefab == null || textHeaderPrefab == null ||
-                sectionPrefabHorizontal == null || sectionPrefabVertical == null ||
-                headerFontSettings == null || roleHeaderFontSettings == null || roleMembersFontSettings == null ||
-                spacerObject == null)
+            if (_imageTextPrefab == null || _imageHeaderPrefab == null || _textHeaderPrefab == null ||
+                _sectionPrefabHorizontal == null || _sectionPrefabVertical == null ||
+                _headerFontSettings == null || _roleHeaderFontSettings == null || _roleMembersFontSettings == null ||
+                _spacerObject == null)
             {
                 // Show an error message in the editor GUI
                 EditorUtility.DisplayDialog("Error", "All fields must be set.", "OK");
@@ -92,17 +99,18 @@ namespace Studio23.SS2.CreditsSystem.Editor
             }
 
             var creditSettings = CreateInstance<CreditControllerSettings>();
-            creditSettings.ImageTextPrefab = imageTextPrefab;
-            creditSettings.ImageHeaderPrefab = imageHeaderPrefab;
-            creditSettings.TextHeaderPrefab = textHeaderPrefab;
-            creditSettings.SectionPrefabHorizontal = sectionPrefabHorizontal;
-            creditSettings.SectionPrefabVertical = sectionPrefabVertical;
-            creditSettings.HeaderFontSettings = headerFontSettings;
-            creditSettings.RoleHeaderFontSettings = roleHeaderFontSettings;
-            creditSettings.RoleMembersFontSettings = roleMembersFontSettings;
-            creditSettings.SpacerObject = spacerObject;
+            creditSettings.ImageTextPrefab = _imageTextPrefab;
+            creditSettings.ImageHeaderPrefab = _imageHeaderPrefab;
+            creditSettings.TextHeaderPrefab = _textHeaderPrefab;
+            creditSettings.SectionPrefabHorizontal = _sectionPrefabHorizontal;
+            creditSettings.SectionPrefabVertical = _sectionPrefabVertical;
+            creditSettings.HeaderFontSettings = _headerFontSettings;
+            creditSettings.RoleHeaderFontSettings = _roleHeaderFontSettings;
+            creditSettings.RoleMembersFontSettings = _roleMembersFontSettings;
+            creditSettings.SpacerObject = _spacerObject;
 
-            var path = AssetDatabase.GenerateUniqueAssetPath("Assets/Packages/com.studio23.ss2.creditssystem/Samples/creditsSettings.asset"); // Set the desired folder and asset name
+            var path = AssetDatabase.GenerateUniqueAssetPath(
+                "Assets/Packages/com.studio23.ss2.creditssystem/Samples/creditsSettings.asset"); // Set the desired folder and asset name
             AssetDatabase.CreateAsset(creditSettings, path);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
