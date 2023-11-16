@@ -1,13 +1,13 @@
 {
   "name": "com.studio23.ss2.creditssystem",
-  "version": "0.0.1",
+  "version": "1.0.2",
   "displayName": "Credits System",
-  "description": "This is an extension tool designed to simplify the process of creating folder structures required for Unity packages that are published on  openupm.com.",
+  "description": "This is a tool to quickly generate credits scene for games",
   "unity": "2022.3",
   "unityRelease": "10f1",
-  "documentationUrl": "https://openupm.com/packages/com.studio23.ss2.creditssystem",
-  "changelogUrl": "https://openupm.com/packages/com.studio23.ss2.creditssystem",
-  "licensesUrl": "https://api.github.com/licenses/mit",
+  "documentationUrl": "https://studio-23-xyz.github.io/com.studio23.ss2.creditssystem/manual/",
+  "changelogUrl": "https://studio-23-xyz.github.io/com.studio23.ss2.creditssystem/changelog/CHANGELOG.html",
+  "licensesUrl": "https://studio-23-xyz.github.io/com.studio23.ss2.creditssystem/license/LICENSE.html",
   "scopedRegistries": [
     {
       "name": "Studio 23",
@@ -27,7 +27,7 @@
   ],
 "repository": {
     "type": "git",
-    "url": "https://github.com/Studio-23-xyz/{package_name}.git"    
+    "url": "https://github.com/Studio-23-xyz/com.studio23.ss2.creditssystem.git"    
   },
   "author": {
     "name": "Studio 23",
