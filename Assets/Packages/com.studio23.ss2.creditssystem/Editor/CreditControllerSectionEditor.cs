@@ -78,11 +78,10 @@ namespace Studio23.SS2.CreditsSystem.Editor
                 EditorGUILayout.BeginHorizontal();
                 //GUILayout.Space(20); // Add left padding
                 sectionData.Sections[i] = EditorGUILayout.TextField($"Sections {i + 1}:", sectionData.Sections[i]);
-                if (GUILayout.Button("Remove", GUILayout.Width(80)) && sectionData.Sections.Count > 0)
+                if (GUILayout.Button("Remove", GUILayout.Width(80)) && sectionData.Sections.Count > i)
                     sectionData.Sections.RemoveAt(i);
                 EditorGUILayout.EndHorizontal();
             }
-
             if (GUILayout.Button("Add Section", GUILayout.Width(150))) sectionData.Sections.Add("");
         }
 
@@ -102,14 +101,22 @@ namespace Studio23.SS2.CreditsSystem.Editor
             _sectionContent.SectionInformation = _sectionDataList;
 
             // Specify the path to save the ScriptableObject
-            var path =
-                "Assets/Packages/com.studio23.ss2.creditssystem/Samples/creditSection.asset"; // Set your desired folder and asset name
+            string path = EditorUtility.SaveFilePanelInProject(
+                "Save Credit Section",
+                "creditSection",
+                "asset",
+                "Please enter a file name to save the credit section to",
+                "Assets/Packages/com.studio23.ss2.creditssystem/Samples/"
+            );
 
-            // Create the asset and save it
-            AssetDatabase.CreateAsset(_sectionContent, path);
-            EditorUtility.SetDirty(_sectionContent);
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
+            if (!string.IsNullOrEmpty(path))
+            {
+                // Create the asset and save it
+                AssetDatabase.CreateAsset(_sectionContent, path);
+                EditorUtility.SetDirty(_sectionContent);
+                AssetDatabase.SaveAssets();
+                AssetDatabase.Refresh();
+            }
         }
     }
 }

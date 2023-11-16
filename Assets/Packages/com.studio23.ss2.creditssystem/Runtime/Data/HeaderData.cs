@@ -7,7 +7,6 @@ namespace Studio23.SS2.CreditsSystem.Data
 	public class HeaderData 
 	{
 		public Sprite HeaderImage;
-
 		public string MainHeaderText;
 		public string SubHeaderText;
 		public string OptionalHeaderText;

@@ -17,7 +17,7 @@ namespace Studio23.SS2.CreditsSystem.Editor
             headerData.MainHeaderText = EditorGUILayout.TextField("Main Header Text", headerData.MainHeaderText);
             headerData.SubHeaderText = EditorGUILayout.TextField("Sub Header Text", headerData.SubHeaderText);
             headerData.OptionalHeaderText = EditorGUILayout.TextField("Optional Header Text", headerData.OptionalHeaderText);
+
         }
     }
-
 }

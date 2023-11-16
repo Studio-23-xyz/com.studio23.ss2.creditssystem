@@ -41,8 +41,6 @@ namespace Studio23.SS2.CreditsSystem.Editor
                 var titleRect = EditorGUILayout.GetControlRect(false, _titleImage.height);
                 EditorGUI.DrawPreviewTexture(titleRect, _titleImage);
             }
-
-
             GUILayout.Label("Credit Settings Data Creation", EditorStyles.boldLabel);
 
             _imageTextPrefab =

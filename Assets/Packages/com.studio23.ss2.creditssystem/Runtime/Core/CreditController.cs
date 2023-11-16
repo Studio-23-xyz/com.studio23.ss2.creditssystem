@@ -10,16 +10,11 @@ namespace Studio23.SS2.CreditsSystem.Core
     public class CreditController : MonoBehaviour
     {
         public bool ScrollOnStart;
-
         [Header("Header Style")] public HeaderType HeaderType;
-
         public Transform ContentParent;
-
         public CreditSectionContentScriptableObject SectionData;
-
         //[Expandable]
         public CreditControllerSettings SettingsData;
-
         [SerializeField] private ScrollViewController _scrollViewController;
         private Transform _headerTransform;
 
@@ -29,7 +24,6 @@ namespace Studio23.SS2.CreditsSystem.Core
             SettingsData.OnHeaderSettingsChanged += UpdateHeaderSettings;
             SettingsData.OnRoleNameSettingsChanged += UpdateRoleNames;
             SettingsData.OnRoleMemberSettingsChanged += UpdateRoleMembers;
-
             if (ScrollOnStart)
                 StartScrollingDebug();
         }
@@ -70,7 +64,6 @@ namespace Studio23.SS2.CreditsSystem.Core
                 //textAsset.UpdateFontAsset();
             }
         }
-
         private void UpdateHeaderSettings(TextSettings textSettings)
         {
             ContentParent.GetChild(1).GetComponentInChildren<TextMeshProUGUI>().font = textSettings.FontAsset;

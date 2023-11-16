@@ -9,8 +9,6 @@ namespace Studio23.SS2.CreditsSystem.Data
 	{
 		public string SectionName;
 		public List<string> Sections;
-
-
         public SectionData()
         {
             Sections = new List<string>();
