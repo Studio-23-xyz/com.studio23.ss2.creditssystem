@@ -1,0 +1,122 @@
+{
+  "api/Global.ContentFitterRefresh.html": {
+    "href": "api/Global.ContentFitterRefresh.html",
+    "title": "Class ContentFitterRefresh | |",
+    "keywords": "Class ContentFitterRefresh Namespace Global public class ContentFitterRefresh : MonoBehaviour Inheritance object ContentFitterRefresh Methods RefreshContentFitters() public void RefreshContentFitters()"
+  },
+  "api/Global.TextController.html": {
+    "href": "api/Global.TextController.html",
+    "title": "Class TextController | |",
+    "keywords": "Class TextController Namespace Global public class TextController : MonoBehaviour Inheritance object TextController Methods UpdateText(TextSettings) public void UpdateText(TextSettings settings) Parameters settings TextSettings"
+  },
+  "api/Global.html": {
+    "href": "api/Global.html",
+    "title": "Namespace | |",
+    "keywords": "Namespace Classes ContentFitterRefresh TextController"
+  },
+  "api/Studio23.SS2.CreditsSystem.Core.CreditController.html": {
+    "href": "api/Studio23.SS2.CreditsSystem.Core.CreditController.html",
+    "title": "Class CreditController | |",
+    "keywords": "Class CreditController Namespace Studio23.SS2.CreditsSystem.Core public class CreditController : MonoBehaviour Inheritance object CreditController Fields ContentParent public Transform ContentParent Field Value Transform HeaderType public HeaderType HeaderType Field Value HeaderType ScrollOnStart public bool ScrollOnStart Field Value bool SectionData public CreditSectionContentScriptableObject SectionData Field Value CreditSectionContentScriptableObject SettingsData public CreditControllerSettings SettingsData Field Value CreditControllerSettings Methods GenerateHorizontalSections() Set Credits Roll onto Horizontal Layout public void GenerateHorizontalSections() GenerateSections() Generate section information from the section data public void GenerateSections() GenerateVerticalSections() Set credit rolls onto vertical layout public void GenerateVerticalSections() StartScrollingDebug() public void StartScrollingDebug()"
+  },
+  "api/Studio23.SS2.CreditsSystem.Core.CreditControllerSettings.DataChangeEvent.html": {
+    "href": "api/Studio23.SS2.CreditsSystem.Core.CreditControllerSettings.DataChangeEvent.html",
+    "title": "Delegate CreditControllerSettings.DataChangeEvent | |",
+    "keywords": "Delegate CreditControllerSettings.DataChangeEvent Namespace Studio23.SS2.CreditsSystem.Core public delegate void CreditControllerSettings.DataChangeEvent(TextSettings textSettings) Parameters textSettings TextSettings"
+  },
+  "api/Studio23.SS2.CreditsSystem.Core.CreditControllerSettings.html": {
+    "href": "api/Studio23.SS2.CreditsSystem.Core.CreditControllerSettings.html",
+    "title": "Class CreditControllerSettings | |",
+    "keywords": "Class CreditControllerSettings Namespace Studio23.SS2.CreditsSystem.Core [Serializable] public class CreditControllerSettings : ScriptableObject Inheritance object CreditControllerSettings Fields HeaderFontSettings public TextSettings HeaderFontSettings Field Value TextSettings ImageHeaderPrefab public GameObject ImageHeaderPrefab Field Value GameObject ImageTextPrefab public GameObject ImageTextPrefab Field Value GameObject OnHeaderSettingsChanged public CreditControllerSettings.DataChangeEvent OnHeaderSettingsChanged Field Value CreditControllerSettings.DataChangeEvent OnRoleMemberSettingsChanged public CreditControllerSettings.DataChangeEvent OnRoleMemberSettingsChanged Field Value CreditControllerSettings.DataChangeEvent OnRoleNameSettingsChanged public CreditControllerSettings.DataChangeEvent OnRoleNameSettingsChanged Field Value CreditControllerSettings.DataChangeEvent RoleHeaderFontSettings public TextSettings RoleHeaderFontSettings Field Value TextSettings RoleMembersFontSettings public TextSettings RoleMembersFontSettings Field Value TextSettings SectionPrefabHorizontal public GameObject SectionPrefabHorizontal Field Value GameObject SectionPrefabVertical public GameObject SectionPrefabVertical Field Value GameObject SpacerObject public GameObject SpacerObject Field Value GameObject TextHeaderPrefab public GameObject TextHeaderPrefab Field Value GameObject"
+  },
+  "api/Studio23.SS2.CreditsSystem.Core.ScrollViewController.html": {
+    "href": "api/Studio23.SS2.CreditsSystem.Core.ScrollViewController.html",
+    "title": "Class ScrollViewController | |",
+    "keywords": "Class ScrollViewController Namespace Studio23.SS2.CreditsSystem.Core public class ScrollViewController : MonoBehaviour Inheritance object ScrollViewController Fields IsScrolling public bool IsScrolling Field Value bool ShouldReset public bool ShouldReset Field Value bool"
+  },
+  "api/Studio23.SS2.CreditsSystem.Core.TextSettings.html": {
+    "href": "api/Studio23.SS2.CreditsSystem.Core.TextSettings.html",
+    "title": "Class TextSettings | |",
+    "keywords": "Class TextSettings Namespace Studio23.SS2.CreditsSystem.Core [Serializable] public class TextSettings Inheritance object TextSettings Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Fields FontAsset public TMP_FontAsset FontAsset Field Value TMP_FontAsset FontStyle public FontStyles FontStyle Field Value FontStyles"
+  },
+  "api/Studio23.SS2.CreditsSystem.Core.html": {
+    "href": "api/Studio23.SS2.CreditsSystem.Core.html",
+    "title": "Namespace Studio23.SS2.CreditsSystem.Core | |",
+    "keywords": "Namespace Studio23.SS2.CreditsSystem.Core Classes CreditController CreditControllerSettings ScrollViewController TextSettings Delegates CreditControllerSettings.DataChangeEvent"
+  },
+  "api/Studio23.SS2.CreditsSystem.Data.CreditSectionContentScriptableObject.html": {
+    "href": "api/Studio23.SS2.CreditsSystem.Data.CreditSectionContentScriptableObject.html",
+    "title": "Class CreditSectionContentScriptableObject | |",
+    "keywords": "Class CreditSectionContentScriptableObject Namespace Studio23.SS2.CreditsSystem.Data public class CreditSectionContentScriptableObject : ScriptableObject Inheritance object CreditSectionContentScriptableObject Fields HeaderInformation public HeaderData HeaderInformation Field Value HeaderData SectionInformation public List<SectionData> SectionInformation Field Value List<SectionData>"
+  },
+  "api/Studio23.SS2.CreditsSystem.Data.HeaderData.html": {
+    "href": "api/Studio23.SS2.CreditsSystem.Data.HeaderData.html",
+    "title": "Class HeaderData | |",
+    "keywords": "Class HeaderData Namespace Studio23.SS2.CreditsSystem.Data [Serializable] public class HeaderData Inheritance object HeaderData Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Fields HeaderImage public Sprite HeaderImage Field Value Sprite MainHeaderText public string MainHeaderText Field Value string OptionalHeaderText public string OptionalHeaderText Field Value string SubHeaderText public string SubHeaderText Field Value string"
+  },
+  "api/Studio23.SS2.CreditsSystem.Data.HeaderType.html": {
+    "href": "api/Studio23.SS2.CreditsSystem.Data.HeaderType.html",
+    "title": "Enum HeaderType | |",
+    "keywords": "Enum HeaderType Namespace Studio23.SS2.CreditsSystem.Data public enum HeaderType Fields ImageOnly = 1 TextAndImage = 0 TextOnly = 2"
+  },
+  "api/Studio23.SS2.CreditsSystem.Data.SectionData.html": {
+    "href": "api/Studio23.SS2.CreditsSystem.Data.SectionData.html",
+    "title": "Class SectionData | |",
+    "keywords": "Class SectionData Namespace Studio23.SS2.CreditsSystem.Data [Serializable] public class SectionData Inheritance object SectionData Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors SectionData() public SectionData() Fields SectionName public string SectionName Field Value string Sections public List<string> Sections Field Value List<string>"
+  },
+  "api/Studio23.SS2.CreditsSystem.Data.html": {
+    "href": "api/Studio23.SS2.CreditsSystem.Data.html",
+    "title": "Namespace Studio23.SS2.CreditsSystem.Data | |",
+    "keywords": "Namespace Studio23.SS2.CreditsSystem.Data Classes CreditSectionContentScriptableObject HeaderData SectionData Enums HeaderType"
+  },
+  "api/Studio23.SS2.CreditsSystem.Editor.CreditControllerInspector.html": {
+    "href": "api/Studio23.SS2.CreditsSystem.Editor.CreditControllerInspector.html",
+    "title": "Class CreditControllerInspector | |",
+    "keywords": "Class CreditControllerInspector Namespace Studio23.SS2.CreditsSystem.Editor public class CreditControllerInspector : UnityEditor.Editor Inheritance object CreditControllerInspector Methods OnInspectorGUI() public override void OnInspectorGUI()"
+  },
+  "api/Studio23.SS2.CreditsSystem.Editor.CreditControllerSectionEditor.html": {
+    "href": "api/Studio23.SS2.CreditsSystem.Editor.CreditControllerSectionEditor.html",
+    "title": "Class CreditControllerSectionEditor | |",
+    "keywords": "Class CreditControllerSectionEditor Namespace Studio23.SS2.CreditsSystem.Editor public class CreditControllerSectionEditor : EditorWindow Inheritance object CreditControllerSectionEditor Methods ShowWindow() public static void ShowWindow()"
+  },
+  "api/Studio23.SS2.CreditsSystem.Editor.CreditControllerSettingsEditor.html": {
+    "href": "api/Studio23.SS2.CreditsSystem.Editor.CreditControllerSettingsEditor.html",
+    "title": "Class CreditControllerSettingsEditor | |",
+    "keywords": "Class CreditControllerSettingsEditor Namespace Studio23.SS2.CreditsSystem.Editor public class CreditControllerSettingsEditor : EditorWindow Inheritance object CreditControllerSettingsEditor Methods ShowWindow() public static void ShowWindow()"
+  },
+  "api/Studio23.SS2.CreditsSystem.Editor.HeaderDataEditor.html": {
+    "href": "api/Studio23.SS2.CreditsSystem.Editor.HeaderDataEditor.html",
+    "title": "Class HeaderDataEditor | |",
+    "keywords": "Class HeaderDataEditor Namespace Studio23.SS2.CreditsSystem.Editor public class HeaderDataEditor : UnityEditor.Editor Inheritance object HeaderDataEditor Methods OnInspectorGUI() public override void OnInspectorGUI()"
+  },
+  "api/Studio23.SS2.CreditsSystem.Editor.html": {
+    "href": "api/Studio23.SS2.CreditsSystem.Editor.html",
+    "title": "Namespace Studio23.SS2.CreditsSystem.Editor | |",
+    "keywords": "Namespace Studio23.SS2.CreditsSystem.Editor Classes CreditControllerInspector CreditControllerSectionEditor CreditControllerSettingsEditor HeaderDataEditor"
+  },
+  "api/index.html": {
+    "href": "api/index.html",
+    "title": "| |",
+    "keywords": "This is the documentation for the Scripting APIs of this package."
+  },
+  "changelog/CHANGELOG.html": {
+    "href": "changelog/CHANGELOG.html",
+    "title": "1.0.1 | |",
+    "keywords": "1.0.1 New Editor GUI Added for creating the Credit Settings and Credit Sections Code Dependency and Remove Bug Fixed"
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "| |",
+    "keywords": "This page redirects to the manual."
+  },
+  "license/LICENSE.html": {
+    "href": "license/LICENSE.html",
+    "title": "| |",
+    "keywords": "MIT License Copyright (c) 2023 Studio-23 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+  },
+  "manual/index.html": {
+    "href": "manual/index.html",
+    "title": "Credits System | |",
+    "keywords": "Credits System Credit System is a tool designed for generating and managing data related to player or developer individual components, and sections within a game. It facilitates the creation of comprehensive profiles and progress tracking for a more personalized and engaging user experience. Table of Contents Installation Usage Setting up Credit Sections Setting up Credits Settings Usage of Credits Controller Usage of Scroll View Controller License Installation Install via Git URL You can also use the \"Install from Git URL\" option from Unity Package Manager to install the package. https://github.com/Studio-23-xyz/com.studio23.ss2.creditssystem.git#upm Usage Setting up Credit Sections This package come with a default scriptable objects which requires to setup necessary credit sections. But If you want to customize and create a new credit sections, just go to Studio 23-> Credit System -> Create Credit Section. Then fill up the necessary information you required. There is section information where you can create new category and names related to the category. Final output can be looked like This Create Credit Settings will create new scriptable object, which you can assign onto credit controller system. Setting up Credit Settings You can change your own font asset and style in credit settings. To change just go to Studio 23 -> Credit System -> Create Credit Settings. Usage of Credits Controller Credit Controller will generate credit data which you've created from credit section and also generate credit utlities from credit settings asset. Retreving The Credit Data: Credit Data will be generated from the creditsection asset which you've create and it will generate assets in the hirerchy panel. You just need to press \"Generate Credits Data\". In CreditController script GenerateSections() will be responsible for the things. Credits Layout Change: GenerateVerticalSelections() and GenerateHorizontalSelections() will change the credits roll layout elements. Usage of Scroll View Controller Scrollviewcontroller will change the scrolling speed and positions for the scroll view controller. There is a scrollDampValue where you can adjust to control the scroll reset position. OnEndScroll() will be used whenever the scrolling will be finished."
+  }
+}
