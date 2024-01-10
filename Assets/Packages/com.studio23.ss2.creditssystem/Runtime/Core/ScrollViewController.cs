@@ -1,4 +1,9 @@
+using System;
+using System.Threading;
+using Codice.Utils;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 
@@ -11,18 +16,31 @@ namespace Studio23.SS2.CreditsSystem.Core
         [SerializeField] private float _scrollSpeed = 500f; // Adjust this value to control the scrolling speed
         [SerializeField] private float _scrollDampValue = 100f; // Adjust the damping value to control scroll reset position
         private float _resetPosition; // Position where the content resets
-        public bool IsScrolling;
+        private bool _isScrolling;
         public bool ShouldReset; // Boolean to determine whether to reset or not
         private Vector2 _contentPosition;
+        [SerializeField] private float _eventFireWaitDuration;
+        public UnityEvent OnScrollEndEvent;
+        private CancellationTokenSource _cancelToken;
 
         private void Start()
         {
             // Calculate the reset position based on the content's height
             _resetPosition = _scrollContent.rect.height;
+
         }
+
+        public void StartScrolling()
+        {
+            _isScrolling = true;
+            _scrollRect.content.anchoredPosition *= new Vector2(1,0);
+            if(_cancelToken != null) _cancelToken?.Cancel();
+            _cancelToken = new CancellationTokenSource();
+        }
+
         private void Update()
         {
-            if (IsScrolling)
+            if (_isScrolling)
             {
                 _contentPosition = _scrollRect.content.anchoredPosition;
 
@@ -43,10 +61,14 @@ namespace Studio23.SS2.CreditsSystem.Core
         /// <summary>
         ///     Method to be called when scrolling reaches the end
         /// </summary>
-        private void OnEndScroll()
+        private async void OnEndScroll()
         {
             // Do something when scrolling reaches the end
-            IsScrolling = false;
+            var cancelWaitTime = await UniTask.Delay(TimeSpan.FromSeconds(_eventFireWaitDuration),
+                cancellationToken: _cancelToken.Token).SuppressCancellationThrow();
+            if(cancelWaitTime) return;
+            OnScrollEndEvent?.Invoke();
+            _isScrolling = false;
         }
     }
 }

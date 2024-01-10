@@ -1,4 +1,16 @@
- ## [1.0.1](2023-11-14)
+# Changelog
+
+## [1.0.3](2024-01-10)
+
+ - Fixed Editor Script for Credit Settings
+ - Added New Event For Scroll End Event
+ - Created a public function to start scrolling
+
+
+ 
+
+
+## [1.0.1](2023-11-14)
 
  - New Editor GUI Added for creating the Credit Settings and Credit Sections
  - Code Dependency and Remove Bug Fixed
