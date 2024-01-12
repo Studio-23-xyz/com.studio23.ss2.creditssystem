@@ -25,13 +25,13 @@ namespace Studio23.SS2.CreditsSystem.Core
             SettingsData.OnRoleNameSettingsChanged += UpdateRoleNames;
             SettingsData.OnRoleMemberSettingsChanged += UpdateRoleMembers;
             if (ScrollOnStart)
-                StartScrollingDebug();
+                StartScrolling();
         }
 
         [ContextMenu("Start Scrolling")]
-        public void StartScrollingDebug()
+        public void StartScrolling()
         {
-            _scrollViewController.IsScrolling = true;
+            _scrollViewController.StartScrolling();
         }
 
         #region Settings Update

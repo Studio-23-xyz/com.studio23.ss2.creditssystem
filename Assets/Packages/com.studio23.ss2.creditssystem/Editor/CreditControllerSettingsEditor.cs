@@ -107,14 +107,23 @@ namespace Studio23.SS2.CreditsSystem.Editor
             creditSettings.RoleMembersFontSettings = _roleMembersFontSettings;
             creditSettings.SpacerObject = _spacerObject;
 
-            var path = AssetDatabase.GenerateUniqueAssetPath(
-                "Assets/Packages/com.studio23.ss2.creditssystem/Samples/creditsSettings.asset"); // Set the desired folder and asset name
-            AssetDatabase.CreateAsset(creditSettings, path);
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
+            string path = EditorUtility.SaveFilePanelInProject(
+                "Save Credit Settings",
+                "creditSettings",
+                "asset",
+                "Please enter a file name to save the credit settings to",
+                "Assets/Packages/com.studio23.ss2.creditssystem/Samples/"
+            ); // Set the desired folder and asset name
 
-            EditorUtility.FocusProjectWindow();
-            Selection.activeObject = creditSettings;
+            if (!string.IsNullOrEmpty(path))
+            {
+                AssetDatabase.CreateAsset(creditSettings, path);
+                AssetDatabase.SaveAssets();
+                AssetDatabase.Refresh();
+
+                EditorUtility.FocusProjectWindow();
+                Selection.activeObject = creditSettings;
+            }
         }
     }
 
