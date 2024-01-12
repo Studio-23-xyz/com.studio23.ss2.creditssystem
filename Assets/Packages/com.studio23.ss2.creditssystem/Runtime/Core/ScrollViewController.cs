@@ -27,15 +27,12 @@ namespace Studio23.SS2.CreditsSystem.Core
         {
             // Calculate the reset position based on the content's height
             _resetPosition = _scrollContent.rect.height;
-
         }
 
         public void StartScrolling()
         {
+            ResetScrolling();
             _isScrolling = true;
-            _scrollRect.content.anchoredPosition *= new Vector2(1,0);
-            if(_cancelToken != null) _cancelToken?.Cancel();
-            _cancelToken = new CancellationTokenSource();
         }
 
         private void Update()
@@ -69,6 +66,14 @@ namespace Studio23.SS2.CreditsSystem.Core
             if(cancelWaitTime) return;
             OnScrollEndEvent?.Invoke();
             _isScrolling = false;
+        }
+
+        public void ResetScrolling()
+        {
+            _isScrolling = false;
+            _scrollRect.content.anchoredPosition *= new Vector2(1, 0);
+            if (_cancelToken != null) _cancelToken?.Cancel();
+            _cancelToken = new CancellationTokenSource();
         }
     }
 }
