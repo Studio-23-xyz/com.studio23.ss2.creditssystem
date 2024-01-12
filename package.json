@@ -1,0 +1,37 @@
+{
+  "name": "com.studio23.ss2.creditssystem",
+  "version": "1.0.3",
+  "displayName": "Credits System",
+  "description": "This is a tool to quickly generate credits scene for games",
+  "unity": "2022.3",
+  "unityRelease": "10f1",
+  "documentationUrl": "https://studio-23-xyz.github.io/com.studio23.ss2.creditssystem/manual/",
+  "changelogUrl": "https://studio-23-xyz.github.io/com.studio23.ss2.creditssystem/changelog/CHANGELOG.html",
+  "licensesUrl": "https://studio-23-xyz.github.io/com.studio23.ss2.creditssystem/license/LICENSE.html",
+  "scopedRegistries": [
+    {
+      "name": "Studio 23",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.studio23.ss2"
+      ]
+    }
+  ],
+  "dependencies": {
+    "com.cysharp.unitask": "2.5.0"
+  },
+  "keywords": [
+    "Credits",
+    "Utility",
+    "Tool"
+  ],
+"repository": {
+    "type": "git",
+    "url": "https://github.com/Studio-23-xyz/com.studio23.ss2.creditssystem.git"    
+  },
+  "author": {
+    "name": "Studio 23",
+    "email": "contact@studio-23.xyz",
+    "url": "https://studio-23.xyz"
+  }
+}
