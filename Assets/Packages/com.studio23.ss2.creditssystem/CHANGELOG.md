@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.4](2024-01-29)
+
+ - Fixed : Removed unncessary import which was causing build issue
+
+
+
 ## [1.0.3](2024-01-10)
 
  - Fixed Editor Script for Credit Settings
