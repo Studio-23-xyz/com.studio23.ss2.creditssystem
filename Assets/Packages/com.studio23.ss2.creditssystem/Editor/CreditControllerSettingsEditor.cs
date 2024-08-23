@@ -8,7 +8,6 @@ using UnityEngine;
 
 namespace Studio23.SS2.CreditsSystem.Editor
 {
-    [CustomEditor(typeof(CreditControllerSettings))]
     public class CreditControllerSettingsEditor : EditorWindow
     {
         private GameObject _imageTextPrefab;
@@ -23,13 +22,14 @@ namespace Studio23.SS2.CreditsSystem.Editor
 
         private Texture _titleImage;
 
-        [MenuItem("Studio-23/Credit System/Create Credit Settings", false, 2)]
+        [MenuItem("Studio-23/Credit System/Create Credit Settings")]
         public static void ShowWindow()
         {
             GetWindow<CreditControllerSettingsEditor>("Create Credit Settings");
         }
 
-        private void OnGUI()
+
+        void OnGUI()
         {
             if (_titleImage == null)
                 // Load the title image from the Resources folder

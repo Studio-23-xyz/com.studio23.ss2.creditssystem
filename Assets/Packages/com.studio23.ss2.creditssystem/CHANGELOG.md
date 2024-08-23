@@ -1,5 +1,12 @@
 # Changelog
 
+
+## [1.0.5](2024-08-23)
+
+ - Fixed : Removed editor custom type issue
+
+
+
 ## [1.0.4](2024-01-29)
 
  - Fixed : Removed unncessary import which was causing build issue
