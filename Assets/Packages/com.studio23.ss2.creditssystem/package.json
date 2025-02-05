@@ -1,6 +1,6 @@
 {
   "name": "com.studio23.ss2.creditssystem",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "displayName": "Credits System",
   "description": "This is a tool to quickly generate credits scene for games",
   "unity": "2022.3",
