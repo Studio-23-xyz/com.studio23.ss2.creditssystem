@@ -22,6 +22,8 @@ namespace Studio23.SS2.CreditsSystem.Core
         public UnityEvent OnScrollEndEvent;
         private CancellationTokenSource _cancelToken;
 
+        public bool IsCreditScrollFinished => _isScrolling;
+
         private void Start()
         {
             // Calculate the reset position based on the content's height
@@ -66,6 +68,9 @@ namespace Studio23.SS2.CreditsSystem.Core
             OnScrollEndEvent?.Invoke();
             _isScrolling = false;
         }
+
+
+
 
         public void ResetScrolling()
         {

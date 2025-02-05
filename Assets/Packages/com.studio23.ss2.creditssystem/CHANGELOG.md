@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.6](2025-02-05)
+
+ - Added functionality for checking credit ended or not
+
 
 ## [1.0.5](2024-08-23)
 
