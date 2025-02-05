@@ -1,0 +1,19 @@
+{
+    "name": "com.studio23.ss2.creditssystem.editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:21314cb798267a94980342f0f1e50c02",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
